@@ -1,0 +1,57 @@
+<div class="container">
+
+    <h3>Editar Curso</h3>
+
+    <form [formGroup]="formulario" (ngSubmit)="editarCurso()">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="fill">
+                    <mat-label>Nombre del curso</mat-label>
+                    <input matInput formControlName="nombre">
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="fill">
+                    <mat-label>Comision</mat-label>
+                    <input matInput formControlName="comision">
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="fill">
+                    <mat-label>Profesor</mat-label>
+                    <input matInput formControlName="profesor">
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="fill">
+                    <mat-label>Fecha de inicio</mat-label>
+                    <input matInput [matDatepicker]="fechaInicio" formControlName="inicio">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="fechaInicio"></mat-datepicker-toggle>
+                    <mat-datepicker #fechaInicio></mat-datepicker>
+                </mat-form-field>
+            </div> 
+    
+            <div class="col-md-4">
+                <mat-form-field appearance="fill" class="fill">
+                    <mat-label>Fecha terminado</mat-label>
+                    <input matInput [matDatepicker]="fechaFin" formControlName="fin">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="fechaFin"></mat-datepicker-toggle>
+                    <mat-datepicker #fechaFin></mat-datepicker>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-4">
+                <mat-slide-toggle formControlName="inscripcionAbierta">Inscripción abierta</mat-slide-toggle>
+            </div>
+    
+            <div class="col-md-12 mt-3">
+                <button mat-raised-button color="primary" type="submit">Corregir</button>
+            </div>
+        </div>
+    </form>
+</div>
