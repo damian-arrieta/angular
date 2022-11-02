@@ -30,21 +30,4 @@
           </tr>
         </tbody>
       </table>
-
-
-    <div *ngFor="let alumno of alumnos$ | async" class="col-md-3">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>{{ alumno.nombre }}</mat-card-title>
-                <mat-card-subtitle>{{ alumno.apellido }}</mat-card-subtitle>
-            </mat-card-header>
-
-            <mat-card-content>
-                <p>{{ alumno.id }}</p>
-                <p>{{ alumno.email }}</p>
-                <p>{{ alumno.username}}</p>
-            </mat-card-content>
-
-        </mat-card>
-    </div>
 </div>
