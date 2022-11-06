@@ -10,6 +10,7 @@ import { SesionService } from '../../services/sesion.service';
 })
 export class ToolbarComponent implements OnInit {
   sesion$!: Observable<Sesion>
+  opened = false;
 
   constructor(
     private sesionService: SesionService
