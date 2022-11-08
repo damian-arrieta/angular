@@ -10,7 +10,7 @@ import { CursoService } from 'src/app/cursos/services/curso.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  formulario: FormGroup
+  formulario: FormGroup;
 
   constructor(
     private sesionService: SesionService,
