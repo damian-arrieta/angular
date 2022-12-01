@@ -1,0 +1,46 @@
+<div class="container">
+
+    <h3>Editar Alumno</h3>
+
+    <form [formGroup]="formulario" (ngSubmit)="editarAlumno()">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-label>Nombre</mat-label>
+                <mat-form-field appearance="fill" class="fill">
+                    <input type="text" matInput id="inputNombre" placeholder="Nombre" formControlName="nombre">
+                    <p *ngIf="formulario.get('nombre')?.touched && formulario.get('nombre')?.errors?.['required']" class="error">El campo nombre es requerido</p>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-4">
+                <mat-label>Apellido</mat-label>
+                <mat-form-field appearance="fill" class="fill">
+                    <input type="text" matInput id="inputApellido" placeholder="Apellido" formControlName="apellido">
+                    <p *ngIf="formulario.get('apellido')?.touched && formulario.get('apellido')?.errors?.['required']" class="error">El campo apellido es requerido</p>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-4">
+                <mat-label>Email</mat-label>
+                <mat-form-field appearance="fill" class="fill">
+                    <input type="text" matInput id="inputEmail" placeholder="Email" formControlName="email">
+                    <p *ngIf="formulario.get('email')?.touched && formulario.get('email')?.errors?.['required']" class="error">Email requerido</p>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+                <mat-label>Nombre de usuario</mat-label>
+                <mat-form-field appearance="fill" class="fill">
+                    <input type="text" matInput id="inputUsername" placeholder="Username" formControlName="username">
+                    <p *ngIf="formulario.get('username')?.touched && formulario.get('username')?.errors?.['required']" class="error">Username requerido</p>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-md-12 mt-3">
+                <button type="button" mat-raised-button color="primary" [disabled]="formulario.invalid" type="submit">Guardar</button>
+                <button type="button" mat-raised-button routerLink="/alumnos/lista-alumnos">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</div>
+

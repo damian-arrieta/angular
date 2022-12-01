@@ -1,0 +1,27 @@
+<ng-container *ngIf="sesion$ | async as sesion">
+  <div *ngIf="sesion.sesionActiva">
+    <mat-toolbar color="primary-grey">
+      <mat-toolbar-row>
+        <button mat-button (click)="opened=!opened">
+          <mat-icon>
+            menu
+          </mat-icon>
+        </button>
+        <a mat-button routerLink="">Inicio</a>
+        <div class="ordenar-botones"></div>
+        <h2>Bienvenido, {{ sesion.usuarioActivo?.usuario }}</h2>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container>
+      <mat-sidenav  color="primary-grey" [(opened)]="opened" mode="side">
+        <a mat-button routerLink="alumnos/listar" *ngIf="sesion.usuarioActivo?.admin">Alumnos</a>
+        <a mat-button routerLink="alumnos/agregar" *ngIf="sesion.usuarioActivo?.admin">Nuevo Alumno</a>
+        <a mat-button routerLink="cursos/listar">Lista Cursos</a>
+        <a mat-button routerLink="cursos/agregar" *ngIf="sesion.usuarioActivo?.admin">Nuevo Curso</a>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</ng-container>
